@@ -141,19 +141,11 @@ della stringa originale.
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-// function cutString(string) {
-//  if (typeof string === "string") {
-//    return string
-//      .split(" ")
-//      .map(
-//        (word) => word.slice(0, -1) + word.charAt(word.length - 1).toUpperCase()
-//      )
-//      .join(" ");
-//  }
-//}
-//
-//console.log(cutString("ciao"));
-
+function cutString(parola) {
+  const newstring = parola.slice(1, -1);
+  return newstring;
+}
+console.log("ES9: ", cutString("EPICODE"));
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
