@@ -124,17 +124,35 @@ console.log("ES7: ", reverseString("CIAO"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-function upperFirst(altrastringa) {
-  if (typeof altrastringa === "string") {
+function upperFirst(stringhetta) {
+  if (typeof stringhetta === "string") {
+    return stringhetta
+      .split(" ") // crea un array con dentro ogni singola lettera della string
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) //
+      .join(" ");
   }
 }
 
+console.log(upperFirst("ciao sono stefano"));
 /* ESERCIZIO 9
- Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
- della stringa originale.
+Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
+della stringa originale.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// function cutString(string) {
+//  if (typeof string === "string") {
+//    return string
+//      .split(" ")
+//      .map(
+//        (word) => word.slice(0, -1) + word.charAt(word.length - 1).toUpperCase()
+//      )
+//      .join(" ");
+//  }
+//}
+//
+//console.log(cutString("ciao"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
