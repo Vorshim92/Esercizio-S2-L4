@@ -7,7 +7,40 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log("ES1 - EXTRA: ");
+
+function giveMeRandom(array, n) {
+  for (let i = 0; i < n; i++) {
+    array[i] = [];
+    arrayDiProva[i].push(Math.floor(Math.random() * 100) + 1);
+  }
+}
+
+function checkArray(a) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > 5) {
+      console.log(
+        "Il valore della posizione " +
+          i +
+          " è maggiore di 5 ed è uguale a: " +
+          a[i]
+      );
+      somma += parseInt(a[i]);
+    } else
+      console.log(
+        "Il valore della posizione " +
+          a[i].length +
+          " non è maggiore di 5 ed è uguale a: " +
+          a[i]
+      );
+  }
+  console.log(somma);
+}
+let arrayDiProva = [];
+let somma = 0;
+giveMeRandom(arrayDiProva, 5);
+console.log(arrayDiProva);
+checkArray(arrayDiProva);
+
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
@@ -15,12 +48,36 @@ console.log("ES1 - EXTRA: ");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const shoppingCart = [
+  { price: 50, name: "MELA", id: 3, quantity: 12 },
+  { price: 51, name: "PATATE", id: 2, quantity: 5 },
+  { price: 100, name: "BANANA", id: 10, quantity: 1 },
+];
+
+function shoppingCartTotal(array) {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total += array[i].price * array[i].quantity;
+  }
+  return total;
+}
+const totale = shoppingCartTotal(shoppingCart);
+console.log("ES2: ", totale);
+
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto dello stesso tipo, lo aggiunge a "shoppingCart" e ritorna il nuovo numero totale degli elementi.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let newObj = { price: 50, name: "NUOVO", id: 99, quantity: 1 };
+
+function addToShoppingCart(array, newObj) {
+  array.push(newObj);
+
+  return array;
+}
+console.log("ES3: ", addToShoppingCart(shoppingCart, newObj));
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -29,12 +86,29 @@ console.log("ES1 - EXTRA: ");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function maxShoppingCart(array) {
+  let maxCost = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (shoppingCart[i].price > maxCost.price) {
+      maxCost = shoppingCart[i];
+    }
+  }
+  return maxCost;
+}
+
+console.log("ES4: ", maxShoppingCart(shoppingCart));
+
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function latestShoppingCart(array) {
+  return array[array.length - 1];
+}
+
+console.log("ES5: ", latestShoppingCart(shoppingCart));
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
@@ -42,6 +116,23 @@ console.log("ES1 - EXTRA: ");
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function loopUntil(n) {
+  let counter = 0;
+  while (counter < 3) {
+    let random = Math.floor(Math.random() * 10);
+    console.log(random);
+
+    if (random > n) {
+      counter++;
+    } else {
+      counter = 0;
+    }
+  }
+  return console.log("ES6: ", "La funzione è stata completata");
+}
+
+loopUntil(5);
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
